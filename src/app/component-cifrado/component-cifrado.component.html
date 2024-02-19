@@ -1,0 +1,22 @@
+<label for="">Elige una opcion</label>
+<div>
+    <input type="radio" name="modo" [checked]="!bandModo" [(ngModel)]="bandModo" [value]="false">
+    <label>Descifrar</label>
+    <br>
+    <input type="radio" name="modo" [checked]="bandModo"  [(ngModel)]="bandModo" [value]="true">
+    <label>Cifrar</label>
+    <br>
+</div>
+<label>Mensaje: </label>
+<input type="text" placeholder="Ejemplo: Hola" [(ngModel)]="msjDescifrado">
+<br>
+<label>Clave(k): </label>
+<input type="number" [(ngModel)]="claveK">
+<br>
+<input type="checkbox" name="ene" [(ngModel)]="incluirN"><label>Incluir n</label>
+<br>
+<button (click)="btnClic()">Cifrar</button>
+<div *ngIf="mostrarMensaje">
+    <h5>El cifrado para tu mensaje es:</h5>
+    <p style="color: white;">{{msjCifrado}}</p>
+</div> 
